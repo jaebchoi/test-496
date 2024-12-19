@@ -67,9 +67,7 @@ aissemble-hive-metastore-service-chart:
             name: remote-auth-config
             key: AWS_ACCESS_KEY_ID
   configMap:
-    metadata:
-      labels:
-        configStore: enabled
+    configStore: disabled
     metastoreServiceConfig:
       properties:
         - name: javax.jdo.option.ConnectionPassword
