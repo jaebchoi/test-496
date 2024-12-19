@@ -6,17 +6,6 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  {{ if eq .Values.aissemble-hive-metastore-service-chart.configMap.configStore "enabled" }}
-  ignoreDifferences:
-    - group: ""
-      kind: ConfigMap
-      managedFieldsManagers:
-        - argocd-controller
-    - group: apps
-      kind: StatefulSet
-      managedFieldsManagers:
-        - argocd-controller
-  {{ end }}
   destination:
     namespace: test-496
     server: {{ .Values.spec.destination.server }}
