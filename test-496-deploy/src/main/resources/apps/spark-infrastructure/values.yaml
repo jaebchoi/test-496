@@ -46,17 +46,6 @@ aissemble-thrift-server-chart:
      </configuration>
 
 aissemble-hive-metastore-service-chart:
-  app:
-    spec:
-      ignoreDifferences:
-        - group: ""
-          kind: ConfigMap
-          managedFieldsManagers:
-            - argocd-controller
-        - group: apps
-          kind: StatefulSet
-          managedFieldsManagers:
-            - argocd-controller
   mysql:
     auth:
       # Note: Changing these values requires removal of the `hive-metastore-db-0` PVC, or manual modification of the

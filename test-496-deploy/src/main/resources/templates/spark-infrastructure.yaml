@@ -6,6 +6,15 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
+  ignoreDifferences:
+    - group: ""
+      kind: ConfigMap
+      managedFieldsManagers:
+        - argocd-controller
+    - group: apps
+      kind: StatefulSet
+      managedFieldsManagers:
+        - argocd-controller
   destination:
     namespace: test-496
     server: {{ .Values.spec.destination.server }}
