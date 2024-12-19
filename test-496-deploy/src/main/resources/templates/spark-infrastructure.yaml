@@ -7,7 +7,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   ignoreDifferences:
-    - group: apps
+    - group: ""
       kind: ConfigMap
       managedFieldsManagers:
         - argocd-controller
